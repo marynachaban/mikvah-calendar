@@ -1,71 +1,135 @@
-import Avatar from 'components/Avatar'
-import logo from 'assets/logo.svg'
+import React, { useState, useEffect } from 'react';
+import moment from 'moment';
+import logo from '../assets/logo.svg';
 
-const randoms = [
-  [1, 2],
-  [3, 4, 5],
-  [6, 7]
-]
 
-function App() {
+const App = () => {
+
+  const [currentDate, setCurrentDate] = useState<string>('');
+  const [currentTime, setCurrentTime] = useState<string>();
+  const currentMonth = moment().month() + 1;
+
+  useEffect(() => {
+    const calculateTime = () => {
+      const now = moment();
+
+      // Format date and time separately
+      const formattedDate = now.format('YYYY-MM-DD');
+      const formattedTime = now.format('hh:mm:ss a');
+
+      setCurrentDate(formattedDate);
+      setCurrentTime(formattedTime);
+    };
+
+
+    calculateTime();
+
+    const intervalId = setInterval(() => {
+      calculateTime();
+    }, 1000);
+
+    return () => clearInterval(intervalId);
+  }, []);
+
+
   return (
-    <div className="relative overflow-hidden bg-white">
-      <div className="h-screen sm:pb-40 sm:pt-24 lg:pb-48 lg:pt-40">
-        <div className="relative mx-auto max-w-7xl px-4 sm:static sm:px-6 lg:px-8">
-          <div className="sm:max-w-lg">
-            <div className="my-4">
-              <Avatar size="large" src={logo} />
-            </div>
-            <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">
-              Welcome!
-            </h1>
-            <p className="mt-4 text-xl text-gray-500">
-              This is a boilerplate build with Vite, React 18, TypeScript,
-              Vitest, Testing Library, TailwindCSS 3, Eslint and Prettier.
-            </p>
+    <div className='min-h-screen bg-bg-color flex px-2'>
+      {/* Left */}
+      <div className='flex flex-col justify-around'>
+        <div className='border-2 rounded-[20px] border-[white] text-[white] h-1/2 py-4 mt-4'>
+          <div className='font-bold text-[24px] text-center pb-2'>Title</div>
+          {['llllllll', 'bbbbbbbb', 'hhhkgyhfjfhhd', 'jchfjccgch', ''].map((content, index) => {
+            return (
+              <div className='px-20' key={content + index}>{content}</div>
+            )
+          })}
+        </div>
+        <div className='border-2 rounded-[20px] border-[white] text-[white] h-1/2 py-4 mt-4'>
+          <div className='font-bold text-[24px] text-center pb-2'>Title</div>
+          {['llllllll', 'bbbbbbbb', 'hhhkgyhfjfhhd', 'jchfjccgch', ''].map((content, index) => {
+            return (
+              <div className='px-20' key={content + index}>{content}</div>
+            )
+          })}
+        </div>
+      </div>
+      {/* Center */}
+      <div className='grid w-full px-6'>
+        <div className="text-[white] font-bold mt-8 flex justify-between px-20">
+          <div className='w-[110px]'>{currentTime}</div>
+          <div className='text-center'>
+            {/* Logo */}
+            <img src={logo} alt="Description of the image" />
+            <div className='font-thin'>{'רֵיקרֵיקרֵיק'}</div>
+            <div className='font-bold'>{'רֵיק'}</div>
           </div>
           <div>
-            <div className="my-10">
-              <a
-                href="vscode://"
-                className="inline-block rounded-md border border-transparent bg-indigo-600 px-8 py-3 text-center font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-700 focus:ring-offset-2"
-              >
-                Start building for free
-              </a>
+            <div>{'רֵיק'}</div>
+            {currentDate}
+          </div>
+        </div>
+        <div className='px-6'>
+          <div className='flex justify-between pb-4 px-10 text-[white] text-4xl font-bold'>
+            <div>{'רֵיק'}</div>
+            <div>{'רֵיק'}</div>
+          </div>
+          <div className="grid grid-cols-4 grid-rows-3 gap-4 ">
+            {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12].map((index) => (
               <div
-                aria-hidden="true"
-                className="pointer-events-none mt-10 md:mt-0 lg:absolute lg:inset-y-0 lg:mx-auto lg:w-full lg:max-w-7xl"
+                key={index}
+                className={`border-2 border-[white] rounded-[25px] py-2 px-16 text-[white] text-center ${index === currentMonth ? 'border-[yellow]' : ''
+                  }`}
               >
-                <div className="absolute sm:left-1/2 sm:top-0 sm:translate-x-8 lg:left-1/2 lg:top-1/2 lg:-translate-y-1/2 lg:translate-x-8">
-                  <div className="flex items-center space-x-6 lg:space-x-8">
-                    {randoms.map((random, number) => (
-                      <div
-                        key={`random-${random[number]}`}
-                        className="grid shrink-0 grid-cols-1 gap-y-6 lg:gap-y-8"
-                      >
-                        {random.map((number) => (
-                          <div
-                            key={`random-${number}`}
-                            className="h-64 w-44 overflow-hidden rounded-lg sm:opacity-0 lg:opacity-100"
-                          >
-                            <img
-                              src={`https://picsum.photos/600?random=${number}`}
-                              alt=""
-                              className="h-full w-full bg-indigo-100 object-cover object-center"
-                            />
-                          </div>
-                        ))}
-                      </div>
-                    ))}
-                  </div>
-                </div>
+                {'רֵיק'} <div>{'---'}</div> <div>{'Name'}</div>
               </div>
-            </div>
+            ))}
+          </div>
+        </div>
+        <div className='flex bottom-boxes [&>*:nth-child(n+2)]:ml-4'>
+          <div className='border-2 rounded-[20px] border-[white] text-[white] py-4'>
+            <div className='font-bold text-[24px] text-center pb-2'>Title</div>
+            {['llllllll', 'bbbbbbbb', 'hhhkgyhfjfhhd'].map((content, index) => {
+              return (
+                <div className='px-20' key={content + index}>{content}</div>
+              )
+            })}
+          </div>
+          <div className='border-2 rounded-[20px] border-[white] text-[white] py-4'>
+            <div className='font-bold text-[24px] text-center pb-2'>Title</div>
+            {['llllllll', 'bbbbbbbb', 'hhhkgyhfjfhhd'].map((content, index) => {
+              return (
+                <div className='px-20' key={content + index}>{content}</div>
+              )
+            })}
+          </div>
+          <div className='border-2 rounded-[20px] border-[white] text-[white] py-4'>
+            <div className='font-bold text-[24px] text-center pb-2'>Title</div>
+            {['llllllll', 'bbbbbbbb', 'hhhkgyhfjfhhd'].map((content, index) => {
+              return (
+                <div className='px-20' key={content + index}>{content}</div>
+              )
+            })}
           </div>
         </div>
       </div>
+      {/* Right */}
+      <div className='flex flex-col justify-around'>
+        <div className='border-2 rounded-[20px] border-[white] text-[white] h-1/2 mt-4 py-4'>
+          <div className='font-bold text-[24px] text-center pb-2'>Title</div>
+        </div>
+        <div className='border-2 rounded-[20px] border-[white] text-[white] h-1/2 mt-4 py-4'>
+          <div className='font-bold text-[24px] text-center pb-2'>Title</div>
+          {['llllllll', 'bbbbbbbb', 'hhhkgyhfjfhhd', 'jchfjccgch', ''].map((content, index) => {
+            return (
+              <div className='px-20' key={content + index}>{content}</div>
+            )
+          })}
+        </div>
+      </div>
+      <div>
+      </div>
     </div>
-  )
-}
+  );
+};
 
-export default App
+export default App;
