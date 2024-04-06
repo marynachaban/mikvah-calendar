@@ -1,0 +1,42 @@
+#center__month__box {
+    position: relative;
+  }
+  
+  #center__month__box::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 25px;
+    padding: 2px; /* control the border thickness */
+    background: linear-gradient(100deg, grey, white);
+    -webkit-mask: 
+      linear-gradient(#fff 0 0) content-box, 
+      linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+            mask-composite: exclude;
+    pointer-events: none;
+  }
+
+  #center__current__month__box {
+    position: relative;
+    background: linear-gradient(180deg, #1A1D24, #3A3B3F);
+    border-radius: 25px;
+   
+  }
+  
+  #center__current__month__box::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 25px;
+    padding: 2px; /* control the border thickness */
+    background: grey;
+    -webkit-mask: 
+      linear-gradient(rgb(141, 48, 48) 0 0) content-box, 
+      linear-gradient(rgb(74, 21, 21) 0 0);
+    -webkit-mask-composite: xor;
+            mask-composite: exclude;
+    pointer-events: none;
+  }
+
+

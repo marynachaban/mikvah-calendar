@@ -1,5 +1,210 @@
 {
   "login": "mm",
   "password": "cc",
-  "monthSponsorText": ""
+  "underLogoSponsorText": "Under logo sponsor text test",
+  "underLogoSponsorSubtitle": "Under logo sponsor subtitle test",
+  "bottomSponsorsBoxesContent": [
+    {
+      "name": "Jan",
+      "value": "Thanks \n for \n sponsoring"
+    },
+    {
+      "name": "Feb",
+      "value": "Thanks \n for \n sponsoring"
+    },
+    {
+      "name": "March",
+      "value": "Thanks \n for \n sponsoring"
+    },
+    {
+      "name": "Apr",
+      "value": "Thanks \n for \n sponsoring"
+    },
+    {
+      "name": "May",
+      "value": "Thanks \n for \n sponsoring"
+    },
+    {
+      "name": "June",
+      "value": "Thanks \n for \n sponsoring"
+    },
+    {
+      "name": "July",
+      "value": "Thanks \n for \n sponsoring"
+    },
+    {
+      "name": "August",
+      "value": "Thanks \n for \n sponsoring"
+    },
+    {
+      "name": "Sept",
+      "value": "Thanks \n for \n sponsoring"
+    },
+    {
+      "name": "Oct",
+      "value": "Thanks \n for \n sponsoring"
+    },
+    {
+      "name": "Nov",
+      "value": "Thanks \n for \n sponsoring"
+    },
+    {
+      "name": "Dec",
+      "value": "Thanks \n for \n sponsoring"
+    }
+  ],
+  "centerPrayersBoxes": [
+    {
+      "name": "Month",
+      "value": "Thanks",
+      "month": 1
+    },
+    {
+      "name": "Month",
+      "value": "Thanks",
+      "month": 2
+    },
+    {
+      "name": "Month",
+      "value": "Thanks",
+      "month": 3
+    },
+    {
+      "name": "Month",
+      "value": "Thanks",
+      "month": 4
+    },
+    {
+      "name": "Month",
+      "value": "Thanks",
+      "month": 5
+    },
+    {
+      "name": "Month",
+      "value": "Thanks",
+      "month": 6
+    },
+    {
+      "name": "Month",
+      "value": "Thanks",
+      "month": 7
+    },
+    {
+      "name": "Month",
+      "value": "Thanks",
+      "month": 8
+    },
+    {
+      "name": "Month",
+      "value": "Thanks",
+      "month": 9
+    },
+    {
+      "name": "Month",
+      "value": "Thanks",
+      "month": 10
+    },
+    {
+      "name": "Month",
+      "value": "Thanks",
+      "month": 11
+    },
+    {
+      "name": "Month",
+      "value": "Thanks",
+      "month": 12
+    }
+  ],
+  "leftTopBoxContent": [
+    {
+      "time": "8:00",
+      "text": "Lorem ipsum do"
+    },
+    {
+      "time": "9:00",
+      "text": "Lorem ipsum dolor"
+    },
+    {
+      "time": "10:00",
+      "text": "Lorem ipsum dolor"
+    },
+    {
+      "time": "11:00",
+      "text": "Lorem ipsum ss"
+    },
+    {
+      "time": "12:00",
+      "text": "Lorem ipsum"
+    },
+    {
+      "time": "13:00",
+      "text": "Lorem ipsum gg"
+    },
+    {
+      "time": "13:50",
+      "text": "Lorem ipsum"
+    },
+    {
+      "time": "1:00",
+      "text": "Lorem ipsum dd"
+    },
+    {
+      "time": "15:00",
+      "text": "Lorem ipsum dolo"
+    },
+    {
+      "time": "19:00",
+      "text": "Lorem ipsum dolor "
+    },
+    {
+      "time": "3:00",
+      "text": "Lorem ipsum"
+    },
+    {
+      "time": "3:00",
+      "text": "Lorem ipsum"
+    },
+    {
+      "time": "3:00",
+      "text": "Lorem ipsum"
+    },
+    {
+      "time": "3:00",
+      "text": "Lorem ipsum"
+    },
+    {
+      "time": "3:00",
+      "text": "Lorem ipsum"
+    },
+    {
+      "time": "3:00",
+      "text": "Lorem ipsum"
+    },
+    {
+      "time": "3:00",
+      "text": "Lorem ipsum"
+    },
+    {
+      "time": "3:00",
+      "text": "Lorem ipsum"
+    },
+    {
+      "time": "3:00",
+      "text": "Lorem ipsum"
+    }
+  ],
+  "rightTopMediaContent": {
+    "type": "photo",
+    "fileUrl": "../src/assets/cocoaClub.jpg"
+  },
+  "rightBottomBox": [
+    {
+      "title": "Valentin",
+      "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut"
+    },
+    {
+      "subtitle": "Lorem ipsum dolor sit amet, consectetur",
+      "text": "Lorem ipsum dolor sit"
+    }
+  ]
 }

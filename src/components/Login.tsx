@@ -2,27 +2,36 @@ import React, { useState } from 'react'
 import { ChangeConfigForm } from './ChangeConfigForm'
 import config from './config.json'
 
-export interface ConfigType {
-  monthsPrayers: Array<ArrayItem>
-  timesOfPrayer: Array<ArrayItem>
-  fileUrl: string
-  rightBottomBox: Array<RightBottomContent>
-  monthSponsorText: string
-  bottomSponsorsContent: Array<ArrayItem>
-  login: string
-  password: string
-}
+// export interface ConfigType {
+//   centerPrayersBoxes: Array<ArrayItem> //
+//   leftTopBoxContent: Array<LeftTopBoxContent> //
+//   rightBottomBox: Array<RightBottomContent> //
+//   underLogoSponsorText: string //
+//   underLogoSponsorSubtitle: string //
+//   bottomSponsorsBoxesContent: Array<ArrayItem> // 
+//   rightTopMediaContent: RightTopMediaContent //
+// }
 
-export interface ArrayItem {
-  name: string
-  value?: string
-}
+// export interface ArrayItem {
+//   name: string
+//   value?: string
+// }
 
-export interface RightBottomContent {
-  title: string
-  subtitle?: string
-  text?: string
-}
+// export interface RightTopMediaContent {
+//   type: 'photo' | 'video';
+//   fileUrl: string;
+// }
+
+// export interface LeftTopBoxContent {
+//   time: string
+//   text?: string
+// }
+
+// export interface RightBottomContent {
+//   title: string
+//   subtitle?: string
+//   text?: string
+// }
 
 export const Login = () => {
   const [login, setLogin] = useState('')
