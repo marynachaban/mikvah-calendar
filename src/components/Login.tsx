@@ -71,28 +71,32 @@ export const Login: React.FC<{ config: ConfigType }> = ({ config }) => {
     return (
       <>
         {isError && 'You have an error'}
-        <div>
-          <label htmlFor="username">Username or Email:</label>
-          <input
-            value={login}
-            onChange={(e) => setLogin(e.currentTarget.value)}
-          />
+        <div className='flex flex-col items-center gap-5 mt-5'>
+          <div>
+            <label htmlFor="username">Username or Email:</label>
+            <input
+              value={login}
+              onChange={(e) => setLogin(e.currentTarget.value)}
+              className="border rounded-md ml-3"
+            />
+          </div>
+          <div>
+            <label htmlFor="password">Password:</label>
+            <input
+              type="password"
+              value={password}
+              onChange={(e) => setPassword(e.currentTarget.value)}
+              className="border rounded-md ml-3"
+            />
+          </div>
+          <button
+            onClick={() => handleSubmit()}
+            type="submit"
+            className="bg-theme-color py-2 px-10 rounded-3xl"
+          >
+            Login
+          </button>
         </div>
-        <div>
-          <label htmlFor="password">Password:</label>
-          <input
-            type="password"
-            value={password}
-            onChange={(e) => setPassword(e.currentTarget.value)}
-          />
-        </div>
-        <button
-          onClick={() => handleSubmit()}
-          type="submit"
-          className="bg-[red]"
-        >
-          Login
-        </button>
       </>
     )
   }

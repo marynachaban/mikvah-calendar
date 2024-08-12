@@ -37,8 +37,10 @@ export const Main: React.FC<PropsType> = ({ localConfig, zmanimsText, zmanimsTim
 
         return () => clearInterval(intervalId)
     }, [])
+    console.log(localConfig.rightTopMediaContent);
+
     return (
-        <div className="min-h-screen bg-bg-color flex justify-center px-2 text-s">
+        <div className="min-h-screen max-h-[100vh] bg-bg-color flex justify-center px-2 text-s">
             {/* Left */}
             <div className="flex flex-col justify-around">
                 <div className="border-2 rounded-[20px] relative border-[grey] text-[white] h-1/2 py-4 px-3 mt-4 w-[224px]">
@@ -62,12 +64,12 @@ export const Main: React.FC<PropsType> = ({ localConfig, zmanimsText, zmanimsTim
                         )}
                     </div>
                 </div>
-                <div className="border-2 rounded-[20px] border-[grey] text-[white] h-1/2 py-4 mt-4 px-3 relative">
+                <div className="border-2 rounded-[20px] border-[grey] text-[white] h-1/2 py-4 mt-4 px-3 relative w-[224px]">
                     <div className='bg-light-theme-color border absolute left-5 border-[grey] rounded-full w-3 h-3'></div>
                     <div className='bg-light-theme-color border absolute left-5 bottom-5 border-[grey] rounded-full w-3 h-3'></div>
                     <div className='bg-light-theme-color border absolute right-5 border-[grey] rounded-full w-3 h-3'></div>
                     <div className='bg-light-theme-color border absolute right-5 bottom-5 border-[grey] rounded-full w-3 h-3'></div>
-                    <div className='flex justify-center items-center pb-5 font-bold text-xl text-center text-theme-color'>
+                    <div className='flex justify-center items-center font-bold text-xl text-center text-theme-color'>
                         רֵיק'
                     </div>
                     <div className='flex flex-col overflow-scroll' style={{
@@ -75,7 +77,7 @@ export const Main: React.FC<PropsType> = ({ localConfig, zmanimsText, zmanimsTim
                     }}>
                         {zmanimsTime.map((time, index) => {
                             return (
-                                <div className="flex justify-between items-center pt-5" key={time + index}>
+                                <div className="flex justify-between items-center pt-4" key={time + index}>
                                     <p className='mr-4'>{time}</p>
                                     <p className='text-right'>{zmanimsText[index]}</p>
                                 </div>
@@ -104,7 +106,7 @@ export const Main: React.FC<PropsType> = ({ localConfig, zmanimsText, zmanimsTim
                         <div>{'רֵיק'}</div>
                         <div>{'רֵיק'}</div>
                     </div>
-                    <div className="grid grid-cols-4 grid-rows-3 gap-4 items-center">
+                    <div className="grid grid-cols-4 grid-rows-3 gap-4 items-center mb-3">
                         {localConfig.centerPrayersBoxes.map(({ name, value }, index) => (
                             <div
                                 id={index === currentMonth ? 'center__current__month__box' : 'center__month__box'}
@@ -112,7 +114,7 @@ export const Main: React.FC<PropsType> = ({ localConfig, zmanimsText, zmanimsTim
                                 className={`p-2  text-center ${index === currentMonth ? 'text-[white]' : 'text-theme-color'
                                     }`}
                             >
-                                {name} <p>{'---'}</p> <p>{value}</p>
+                                {name} <p>{'---'}</p><p>{value}</p>
                             </div>
                         ))}
                     </div>
@@ -155,7 +157,6 @@ export const Main: React.FC<PropsType> = ({ localConfig, zmanimsText, zmanimsTim
                     )}
                 </div>
             </div>
-            <div></div>
         </div>
     )
 }

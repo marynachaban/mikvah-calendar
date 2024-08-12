@@ -48,12 +48,12 @@ export const ChangeConfigForm: React.FC<PropsType> = ({ localConfig }) => {
         </div>
         {/* Right Top Banner */}
         <div className='m-6 p-4 flex flex-col border rounded-lg'>
-          <h1 className='font-bold mb-3'>Right Top Banner</h1>
+          <h1 className='font-bold mb-3'>Banner photo or gif url</h1>
           <input className='border rounded-lg px-2' type="text" value={config.rightTopMediaContent.fileUrl} onChange={(e) => {
             setConfig({
               ...config,
               rightTopMediaContent: {
-                type: config.rightTopMediaContent.type,
+                type: "photo",
                 fileUrl: e.currentTarget.value
               }
             })
@@ -114,10 +114,10 @@ export const ChangeConfigForm: React.FC<PropsType> = ({ localConfig }) => {
         </div>
         {/* Bottom sponsor text */}
         <div className='m-6 p-4 flex flex-col border rounded-lg'>
-          <h1 className='font-bold mb-3'>Bottom sponsor text</h1>
+          <h1 className='font-bold mb-3'>Sponsor month text</h1>
           <div className='flex'>
             <h2 className='mr-[165px]'>Month</h2>
-            <h2>Text</h2>
+            <h2>Text</h2> <p> (max 10 words)</p>
           </div>
           {Array.from({ length: 12 }, (_, index) => index + 1).map((_, key) => {
             return <div className='flex items-center py-2'>
@@ -136,6 +136,42 @@ export const ChangeConfigForm: React.FC<PropsType> = ({ localConfig }) => {
                 setConfig({
                   ...config,
                   centerPrayersBoxes: config.centerPrayersBoxes.map(({ value, name }, index) => {
+                    return {
+                      name: name,
+                      value: index !== key ? value : e.currentTarget.value
+                    }
+                  })
+                })
+              }} />
+            </div>
+          })}
+
+        </div>
+        {/* Bottom sponsors month */}
+
+        <div className='m-6 p-4 flex flex-col border rounded-lg'>
+          <h1 className='font-bold mb-3'>Bottom sponsor text</h1>
+          <div className='flex'>
+            <h2 className='mr-[165px]'>Month</h2>
+            <h2>Text</h2>
+          </div>
+          {Array.from({ length: 12 }, (_, index) => index + 1).map((_, key) => {
+            return <div className='flex items-center py-2'>
+              <input className='border rounded-lg px-2 mr-4' value={config.bottomSponsorsBoxesContent[key].name} onChange={(e) => {
+                setConfig({
+                  ...config,
+                  bottomSponsorsBoxesContent: config.bottomSponsorsBoxesContent.map(({ value, name }, index) => {
+                    return {
+                      value: value,
+                      name: index !== key ? name : e.currentTarget.value
+                    }
+                  })
+                })
+              }} />
+              <input className='border rounded-lg px-2' value={config.bottomSponsorsBoxesContent[key].value} onChange={(e) => {
+                setConfig({
+                  ...config,
+                  bottomSponsorsBoxesContent: config.bottomSponsorsBoxesContent.map(({ value, name }, index) => {
                     return {
                       name: name,
                       value: index !== key ? value : e.currentTarget.value
