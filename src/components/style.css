@@ -1,6 +1,10 @@
 #center__month__box {
     position: relative;
   }
+
+  #root {
+    white-space: pre-wrap;  
+  }
   
   #center__month__box::before {
     content: "";
