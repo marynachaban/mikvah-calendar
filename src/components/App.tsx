@@ -15,7 +15,7 @@ export const App: React.FC = () => {
 
   useEffect(() => {
     (async () => {
-      const { data } = await axios.get("http://localhost:4444/config", {
+      const { data } = await axios.get("https://mikvah-back-05daaa072164.herokuapp.com/config", {
         headers: {
           "Cache-Control": "no-cache",
           "Content-Type": "application/x-www-form-urlencoded",
@@ -27,7 +27,7 @@ export const App: React.FC = () => {
 
   useEffect(() => {
     (async () => {
-      const { data } = await axios.get("http://localhost:4444/zmanim")
+      const { data } = await axios.get("https://mikvah-back-05daaa072164.herokuapp.com/zmanim")
       const parser = new DOMParser();
 
 
